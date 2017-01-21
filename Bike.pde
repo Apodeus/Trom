@@ -4,6 +4,7 @@ class Bike {
   PVector speed; //A vector of speed and direction
   color color_bike; //Color of the Bike
   color color_run; // Color of the position already visited
+  int score = 0;
 
   Bike(float x, float y, PVector dir, color c_) {
     speed = dir.copy();
@@ -25,11 +26,12 @@ class Bike {
   }
 
   void update() {
-    run.add(new PVector(pos.x, pos.y));
-    pos.x += speed.x * scale;
-    pos.y += speed.y * scale;
-    pos.x = constrain(pos.x, 0, width - scale);
-    pos.y = constrain(pos.y, 0, height - scale);
+      run.add(new PVector(pos.x, pos.y));
+      pos.x += speed.x * scale;
+      pos.y += speed.y * scale;
+      pos.x = constrain(pos.x, 0, width - scale);
+      pos.y = constrain(pos.y, 0, height - scale);
+    
   }
 
   void changeDir(PVector p) {
