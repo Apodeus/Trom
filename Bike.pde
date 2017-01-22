@@ -26,19 +26,20 @@ class Bike {
   }
 
   void update() {
+    if (!isGameOver) {
       run.add(new PVector(pos.x, pos.y));
       pos.x += speed.x * scale;
       pos.y += speed.y * scale;
       pos.x = constrain(pos.x, 0, width - scale);
       pos.y = constrain(pos.y, 0, height - scale);
-    
+    }
   }
 
   void changeDir(PVector p) {
     if (p.x != (-1 * speed.x) && p.y != (-1 * speed.y)) {
       speed.x = p.x;
       speed.y = p.y;
-      update();
+      //update();
     }
   }
 }
